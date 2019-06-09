@@ -1,0 +1,13 @@
+<apex:component layout="none">
+
+    <apex:attribute name="alertTheme" type="String" required="true" description="The alert theme to apply. Options are: info, warning, error, offline" />
+    <apex:attribute name="message" type="String" required="true" description="The page message to display." />
+
+    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_{!alertTheme}" role="alert">
+        <span class="slds-assistive-text">{!alertTheme}</span>
+        <h2>
+            <apex:outputText value="{!message}" escape="false" /><br/>
+        </h2>
+    </div>
+
+</apex:component>

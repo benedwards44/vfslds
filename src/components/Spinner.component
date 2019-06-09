@@ -1,0 +1,47 @@
+<apex:component layout="none">
+
+    <div id="spinner" class="slds-spinner_container slds-hide">
+        <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <script>
+
+        function showSpinner() {
+
+            // Retrieve the element
+            let spinner = document.getElementById("spinner");
+
+            // Set show and hide classes
+            spinner.classList.remove("slds-hide");
+            spinner.classList.add("slds-show");
+
+            // Retrieve full page height and width
+            let height = document.body.clientHeight + 'px';
+            let width = document.body.clientWidth;
+
+            // Both method used for cross-browser support
+            spinner.setAttribute("style", "width:" + width + "px");
+            spinner.style.width = width;
+
+            // Both method used for cross-browser support
+            spinner.setAttribute("style", "height:" + height);
+            spinner.style.height = height;
+        }
+
+        function hideSpinner() {
+
+            // Retrieve the element
+            let spinner = document.getElementById("spinner");
+
+            // Set show and hide classes
+            spinner.classList.remove("slds-show");
+            spinner.classList.add("slds-hide");
+        }
+    </script>
+
+    <apex:actionStatus id="loading" onstart="showSpinner();" onstop="hideSpinner();" />
+
+</apex:component>

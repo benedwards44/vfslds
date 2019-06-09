@@ -1,0 +1,43 @@
+<apex:component layout="none">
+
+    <apex:attribute name="title" type="String" required="false" description="The title for the Page Header" />
+    <apex:attribute name="subtitle" type="String" required="false" description="The sub-title for the Page Header" />
+    <apex:attribute name="iconClassName" type="String" required="false" description="The full class name for the icon" />
+    <apex:attribute name="iconUrl" type="String" required="false" description="The full URL for the icon" />
+
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container {!iconClassName}">
+                            <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!iconUrl}" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span>{!title}</span>
+                                    <span class="slds-page-header__title slds-truncate" title="{!subtitle}">{!subtitle}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <apex:componentBody />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</apex:component>

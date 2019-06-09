@@ -1,0 +1,15 @@
+<apex:component layout="none">
+
+    <apex:attribute type="String" name="label" required="true" description="Label for the output field." />
+
+    <div class="slds-form-element slds-m-bottom_xxx-small">
+        <div class="slds-form-element__label">
+            <apex:outputText value="{!label}" />
+        </div>
+        <div class="slds-form-element__control">
+            <div class="slds-form-element__static">
+                <apex:componentBody />
+            </div>
+        </div>
+    </div>
+</apex:component>
